@@ -186,13 +186,32 @@ nav ul li a {
 /* More info section */
 
 .more-info {
-  position: static;
   text-align: center;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.more-info p {
+  line-height: 40px;
+  margin: 18px 0 35px;
+}
+
+.more-info h2 {
+  line-height: 50px;
+  margin: 20px 0 35px;
 }
 
 #more-info {
   position: relative;
   top: -100px;
+}
+
+.highlight {
+  background-color: #ffadf9;
+  color: #ff3300;
+  font-weight: 800;
+  padding: 5px 10px;
+  display: inline;
 }
 
 /* MEDIA QUERIES */
@@ -237,5 +256,9 @@ nav ul li a {
 
   .characters {
     transform: scale(0.8);
+  }
+
+  .more-info {
+    max-width: 100%;
   }
 }
