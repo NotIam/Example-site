@@ -3,6 +3,7 @@
 body,
 html,
 * {
+  box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   padding: 0;
   margin: 0;
@@ -23,19 +24,24 @@ h4 {
   font-size: 1rem;
 }
 
-.wrapper {
-  width: 960px;
-  margin: 0 auto;
-}
-
+/* flex parent [1] */
 .hero-banner {
   background-color: #007fff;
-  min-height: 700px;
-  height: 100vh;
-  padding: 50px 20px;
-  box-sizing: border-box;
   position: relative;
+  min-height: 100vh;
+  max-height: fit-content;
   overflow: hidden;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+/* flex child [1] */
+.wrapper {
+  min-width: 620px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
 .hero-banner h1 {
@@ -53,6 +59,14 @@ h4 {
   color: white;
   margin: 0;
 }
+/* flex child [1] */
+.characters {
+  min-width: 500px;
+  margin: 0 auto;
+  height: 540px;
+
+  position: relative;
+}
 
 .character1 {
   background: url("img/character1.png") no-repeat 0 0;
@@ -60,8 +74,8 @@ h4 {
   width: 363px;
   height: 344px;
   position: absolute;
-  top: 117px;
-  right: 89px;
+  bottom: 150px;
+  left: 130px;
 }
 
 .character2 {
@@ -70,8 +84,8 @@ h4 {
   width: 309px;
   height: 371px;
   position: absolute;
-  top: 213px;
-  right: 277px;
+  bottom: 63px;
+  left: 10px;
 }
 
 .character3 {
@@ -80,8 +94,8 @@ h4 {
   width: 297px;
   height: 286px;
   position: absolute;
-  bottom: 74px;
-  right: 74px;
+  bottom: 24px;
+  left: 190px;
 }
 
 a.cta,
@@ -104,4 +118,49 @@ button.cta.alt {
   background-color: #ffd400;
   color: #111;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* MEDIA QUERIES */
+
+/* Centro il testo del banner su mobile */
+
+@media screen and (max-width: 1137px) {
+  .hero-banner {
+    text-align: center;
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}
+
+/* Cambia la grandezza del font su schermi
+   più piccoli 
+   
+   In più aggiusto la grandezza delle figure
+   */
+@media screen and (max-width: 650px) {
+  h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .wrapper {
+    min-width: 0px;
+  }
+
+  .characters {
+    transform: scale(0.8);
+  }
 }
