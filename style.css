@@ -556,6 +556,13 @@ footer {
   }
 }
 
+/* Close the mobile menu if the screen get resized over 800px*/
+@media screen and (min-width: 800px) {
+  .mob-nav {
+    display: none;
+  }
+}
+
 /* Cambia la grandezza del font su schermi
    più piccoli 
    
