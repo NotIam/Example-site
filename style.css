@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap");
 
+/* 
+Index
+-General
+-Hero Banner 
+-Nav bar 
+-More info 
+-Footer 
+-Popup
+*/
+
+/* General */
+
 body,
 html,
 * {
@@ -166,19 +178,42 @@ nav .logo {
   text-indent: -999px;
 }
 
-nav ul {
+.mob-nav {
+  display: none;
+  position: sticky;
+  top: 100px;
+  height: 100px;
+  z-index: 1000;
+}
+
+nav #hamburger {
+  background: url(img/hamburger.png) no-repeat center center;
+  background-size: 100%;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+nav ul,
+.mob-nav ul {
   padding: 0;
   margin: 0 20px 0 0;
 }
 
-nav ul li {
+nav ul li,
+.mob-nav ul li {
   margin: 0;
   padding: 0;
   display: block;
   float: right;
 }
 
-nav ul li a {
+nav ul li a,
+.mob-nav ul li a {
   display: block;
   height: 100%;
   box-sizing: border-box;
@@ -222,6 +257,7 @@ nav ul li a {
 }
 
 /* Story section */
+
 .sep {
   width: 470px;
   height: 10px;
@@ -339,7 +375,7 @@ footer {
   z-index: 1000;
 }
 
-.popup.show {
+.show {
   display: block;
 }
 
@@ -360,8 +396,8 @@ footer {
   padding: 30px 40px;
   background-color: white;
   text-align: center;
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
 
@@ -430,7 +466,7 @@ footer {
 
 /* MEDIA QUERIES */
 
-/* Centro il testo del banner su mobile */
+/* Adattamento a mobile */
 
 @media screen and (max-width: 1137px) {
   .hero-banner {
@@ -446,12 +482,77 @@ footer {
     width: 100%;
     padding: 0;
   }
+
+  /* popup for mobile */
+
+  .popup {
+    background-color: white;
+    overflow-y: scroll;
+  }
+
+  .popup .content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .popup .content h2 {
+    margin-top: 30px;
+  }
+
+  .popup .close {
+    transform: scale(0.8);
+    top: 0;
+    right: 0;
+  }
+
+  .popup .item {
+    display: block;
+    width: 100%;
+  }
+
+  .popup .item {
+    margin-left: 0;
+  }
+
+  .popup .row {
+    margin: 0;
+  }
+
+  .popup button.cta {
+    margin-top: 40px;
+  }
 }
 
 @media screen and (max-width: 800px) {
   .nb-list {
     float: none;
     margin: 0 auto 40px;
+    transform: scale(0.9);
+  }
+
+  .more-info {
+    margin: 130px 0;
+  }
+
+  /* Nav su mobile */
+
+  .mob-nav ul li {
+    text-align: center;
+    width: 100%;
+    display: block;
+    background-color: white;
+  }
+
+  .mob-nav ul {
+    width: 100%;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav #hamburger {
+    display: block;
   }
 }
 
