@@ -331,6 +331,101 @@ footer {
 
 .popup {
   display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup .blanket {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.popup .content {
+  position: absolute;
+  box-sizing: border-box;
+  width: 960px;
+  height: 500px;
+  padding: 30px 40px;
+  background-color: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.popup .content h2 {
+  margin-bottom: 15px;
+}
+
+.popup .close {
+  position: absolute;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: #ff3300 url(img/close.png) no-repeat center center;
+  background-size: 50%;
+  top: -40px;
+  right: -40px;
+  overflow: hidden;
+  text-indent: -9000px;
+  cursor: pointer;
+}
+
+.popup .close:hover {
+  filter: brightness(0.9);
+}
+
+.popup .row {
+  margin-bottom: 40px;
+}
+
+.popup .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.popup .item {
+  float: left;
+  width: 415px;
+  margin-left: 40px;
+  text-align: left;
+}
+
+.popup .item:first-child {
+  margin-left: 0;
+}
+
+.popup .item label {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popup .item input[type="text"] {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  border: 4px solid #111;
+  height: 70px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
 }
 
 /* MEDIA QUERIES */
@@ -364,7 +459,8 @@ footer {
    più piccoli 
    
    In più aggiusto la grandezza delle figure
-   */
+*/
+
 @media screen and (max-width: 650px) {
   h1 {
     font-weight: 800;

@@ -15,7 +15,8 @@
   <div class="hero-banner">
     <div class="wrapper">
       <h4>This website example presents</h4>
-      <h1>The Silliest &amp; <br />
+      <h1>
+        The Silliest &amp; <br />
         Most Awesome Gang <br />
         In The World!
       </h1>
@@ -34,7 +35,7 @@
   <nav>
     <a href="#" class="logo">The Gang</a>
     <ul>
-      <li><a href="#">Sign Up</a></li>
+      <li><a href="javascript:void(0)" onclick="togglePopup()">Sign Up</a></li>
       <li><a href="#story">The Story</a></li>
       <li><a href="#more-info">More Info</a></li>
     </ul>
@@ -48,7 +49,7 @@
         Members will also receive pictures of us in all kinds of shapes and sizes.
         Cool huh?
       </p>
-      <button class="cta">Sign Me Up!</button>
+      <button class="cta" onclick="togglePopup()">Sign Me Up!</button>
     </div>
   </div>
 
@@ -97,32 +98,43 @@
   <footer>
     Made by Jacopo Pangrazi - Web developer
   </footer>
-  <div class="popup">
+
+
+  <div class="popup" id="popup">
     <div class="blanket"></div>
     <div class="content">
       <h2>Fill In Your Details</h2>
       <form action="">
-        <div class="item">
-          <label>Your First Name</label>
-          <input type="text" placeholder="Awesomeface" value="Shirley">
+
+        <div class="row">
+          <div class="item">
+            <label>Your First Name</label>
+            <input type="text" placeholder="Awesomeface" value="Shirley">
+          </div>
+          <div class="item">
+            <label>Your Last Name</label>
+            <input type="text" placeholder="Circleface">
+          </div>
         </div>
-        <div class="item">
-          <label>Your Last Name</label>
-          <input type="text" placeholder="Circleface">
+
+        <div class="row">
+          <div class="item">
+            <label>Your Favourite Color</label>
+            <input type="text" placeholder="White">
+          </div>
+          <div class="item">
+            <label>Your Favourite Food</label>
+            <input type="text" placeholder="Apple Pie">
+          </div>
         </div>
-        <div class="item">
-          <label>Your Favourite Color</label>
-          <input type="text" placeholder="White">
-        </div>
-        <div class="item">
-          <label>Your Favourite Food</label>
-          <input type="text" placeholder="Apple Pie">
-        </div>
+
         <button class="cta">I Want In!</button>
       </form>
-      <button class="close">Close</button>
+      <button class="close" onclick="togglePopup()">Close</button>
     </div>
   </div>
+
+  <script src="script.js" type="text/javascript"></script>
 
 </body>
 
