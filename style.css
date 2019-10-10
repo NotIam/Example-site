@@ -266,6 +266,7 @@ nav ul li a,
 }
 
 .story {
+  overflow: hidden;
   width: 1000px;
   margin: 0 auto;
 }
@@ -527,7 +528,7 @@ footer {
   .nb-list {
     float: none;
     margin: 0 auto 40px;
-    transform: scale(0.9);
+    width: 400px;
   }
 
   .more-info {
@@ -553,6 +554,10 @@ footer {
 
   nav #hamburger {
     display: block;
+  }
+
+  .nb-list li.dragging {
+    width: 360px;
   }
 }
 
@@ -605,5 +610,15 @@ footer {
 
   .sep {
     width: 40%;
+  }
+
+  nav .logo {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nb-list {
+    margin: 0 auto;
   }
 }
